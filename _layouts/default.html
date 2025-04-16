@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    {% if jekyll.environment == "production" %}
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZW6YC1PNM"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-EZW6YC1PNM');
+        </script>
+    {% endif %}
     {%- include head.html -%}
 </head>
+
 <body>
 
     {% if page.url == "/" %}
-        {% include aside.html %}
-        <main class="main-content">
-            {% include navigation.html %}
-            {{ content }}
-        </main>
+    {% include aside.html %}
+    <main class="main-content">
+        {% include navigation.html %}
+        {{ content }}
+    </main>
     {% else %}
-        <main class="container">
-            {% include navigation.html %}
-            {{ content }}
-        </main>
+    <main class="container">
+        {% include navigation.html %}
+        {{ content }}
+    </main>
     {% endif %}
 
     <footer>
         {%- include footer.html -%}
     </footer>
 </body>
+
 </html>
