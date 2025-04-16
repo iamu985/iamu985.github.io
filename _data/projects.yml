@@ -1,0 +1,56 @@
+# _data/projects.yml
+- title: "Talent Radar"
+  link: "/articles/talent_radar_2025-04-14"
+  image: "/assets/imgs/articles/talent_radar/talent-radar.png"
+  description: "AI recruitment automation tool that helps businesses find the best candidates in minutes, not weeks."
+  date: 2025-02-15
+  tags: ["ai", "automation", "personal"]
+
+- title: "Dusk."
+  link: "/projects/ots"
+  image: "/assets/imgs/projects/ots.png"
+  description: "Self-hosted orders and inventory management system for restaurants with minimal setup requirements."
+  date: 2025-01-20
+  tags: ["software", "client"]
+
+- title: "Coffee."
+  link: "/projects/ots"
+  image: "/assets/imgs/projects/coffee/query-builder.png"
+  description: "Membership management desktop application with advanced search query builder capabilities."
+  date: 2025-01-20
+  tags: ["software", "client"]
+
+- title: "Zsh Alias Manager"
+  link: "/projects/ots"
+  image: "/assets/imgs/projects/zshaliasmanager/zshaliasmanager.png"
+  description: "Linux utility tool for simplified alias management in zsh shell."
+  date: 2025-01-20
+  tags: ["utility", "console", "linux"]
+
+- title: "Forevision Digital"
+  link: "/projects/ots"
+  image: "/assets/imgs/projects/forevisiondigital/forevisiondigital.png"
+  description: "WordPress website for music distribution company."
+  date: 2025-01-20
+  tags: ["client", "wordpress", "website"]
+
+- title: "All Gangtok Hotels Site"
+  link: "/projects/ots"
+  image: "/assets/imgs/projects/allgangtokhotels/allgangtokhotels.png"
+  description: "WordPress platform for discovering homestays in Gangtok, Sikkim."
+  date: 2025-01-20
+  tags: ["client", "wordpress", "website"]
+
+- title: "ColorSnatch"
+  link: "/projects/ots"
+  image: "/assets/imgs/projects/colorsnatch/colorsnatch.png"
+  description: "Pygame-powered color matching challenge game."
+  date: 2025-01-20
+  tags: ["game", "python"]
+
+- title: "Awarem"
+  link: "/projects/ots"
+  image: "/assets/imgs/projects/coffee/query-builder.png"
+  description: "Django web application for creating public polls and petitions."
+  date: 2025-01-20
+  tags: ["web application", "python", "django", "personal"]

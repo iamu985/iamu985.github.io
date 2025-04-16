@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<div class="project-container">
+  <div class="project-header">
+    <a href="/projects" class="back-link">← Back to projects</a>
+    <h1 class="yellow cursive project-title">{{page.title}}</h1>
+    
+    <div class="project-meta">
+      {% if page.date %}
+      <div class="meta-item">
+        <span class="meta-label">Date:</span>
+        <span class="meta-value">{{page.date | date: "%B %-d, %Y"}}</span>
+      </div>
+      {% endif %}
+      
+      {% if page.client %}
+      <div class="meta-item">
+        <span class="meta-label">Client:</span>
+        <span class="meta-value">{{page.client}}</span>
+      </div>
+      {% endif %}
+      
+      {% if page.stack %}
+      <div class="meta-item">
+        <span class="meta-label">Technology Stack:</span>
+        <p>
+            {% for tag in page.stack %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </p>
+      </div>
+      {% endif %}
+      
+      <div class="meta-links">
+        {% if page.source_url %}
+        <a href="{{page.source_url}}" class="meta-link" target="_blank">
+          <span class="link-icon">&#128279;</span> Source Code
+        </a>
+        {% endif %}
+        
+        {% if page.demo_url %}
+        <a href="{{page.demo_url}}" class="meta-link" target="_blank">
+          <span class="link-icon">&#128064;</span> Live Demo
+        </a>
+        {% else %}
+        <a href="#" class="meta-link disabled" target="_blank">
+            <span class="link-icon">&#128064;</span> Live Demo
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="project-content">
+    {{ content }}
+  </div>
+</div>

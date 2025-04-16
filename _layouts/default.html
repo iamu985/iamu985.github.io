@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%- include head.html -%}
+</head>
+<body>
+
+    {% if page.url == "/" %}
+        {% include aside.html %}
+        <main class="main-content">
+            {% include navigation.html %}
+            {{ content }}
+        </main>
+    {% else %}
+        <main class="container">
+            {% include navigation.html %}
+            {{ content }}
+        </main>
+    {% endif %}
+
+    <footer>
+        {%- include footer.html -%}
+    </footer>
+</body>
+</html>

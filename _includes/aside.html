@@ -1,0 +1,20 @@
+<aside class="fixed-sidebar">
+    <button class="mobile-menu-toggle" aria-label="Toggle sidebar">
+        ☰
+    </button>
+    <div class="sidebar-content">
+        <img src="/assets/imgs/me.jpeg" alt="Frank Gomez" class="sidebar-img">
+        <div class="profile-info">
+            <h2 class="yellow cursive">Frank Gomez</h2>
+            <p class="designation">Software Engineer</p>
+            <p class="designation">AI Automation Architect<br>& Integration Specialist</p>
+            <p class="tagline">Making systems work harder so people don't have to</p>
+        </div>
+    </div>
+</aside>
+
+<script>
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('sidebar-active');
+    });
+</script>

@@ -1,0 +1,32 @@
+---
+layout: default
+title: Articles
+permalink: /articles/
+---
+
+
+{% assign filtered_articles = site.articles | where_exp: "item", "item.is_live == true" %}
+{% if filtered_articles.size == 0 %}
+    <div class="notice-container">
+        <p class="notice">Articles coming out really soon!</p>
+        <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
+    </div>
+{% else %}
+    <h2>My Articles</h2>
+    <div class="grid">
+        {% for post in filtered_articles %}
+            {% if post.is_live == true %}
+                <div class="article">
+                    <a href="{{ post.url }}">
+                        <div class="featured" style="background-image: url('/assets//imgs/articles/talent_radar/talent-radar.png');">
+                        </div>
+                        <h3>{{ post.title }}</h3>
+                    </a>
+                    <p>{{ post.description }}</p>
+                    <p><i>{{ post.date | date: "%Y-%m-%d" }}</i></p>
+                </div>        
+            {% endif %}        
+        {% endfor %}
+    </div>
+
+{% endif %}

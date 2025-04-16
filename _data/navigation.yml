@@ -1,0 +1,13 @@
+# _data/navigation.yml
+- name: Home
+  link: /
+  class: home
+- name: Projects
+  link: /projects/
+  class: projects
+- name: Articles
+  link: /articles/
+  class: articles
+- name: About
+  link: /about/
+  class: about
