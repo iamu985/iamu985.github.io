@@ -309,7 +309,7 @@ img {
 
 /* ===== MAIN CONTENT ===== */
 .main-content {
-    margin-left: var(--sidebar-width);
+    /* margin-left: var(--sidebar-width); */
     padding: 2% 40px 40px;
     min-height: 100vh;
 }

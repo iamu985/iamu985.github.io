@@ -20,8 +20,8 @@
 
     {% if page.url == "/" %}
     {% include aside.html %}
+    {% include navigation.html %}
     <main class="main-content">
-        {% include navigation.html %}
         {{ content }}
     </main>
     {% else %}
