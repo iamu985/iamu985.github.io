@@ -1,33 +1,35 @@
-<!-- Update your aside.html include to header.html -->
 <header class="site-header">
-    
     <div class="profile-header">
-      <div class="profile-left">
-        <img src="/assets/imgs/me.jpeg" alt="Frank Gomez" class="profile-round">
-      </div>
-      
-      <div class="profile-center">
-        <h1 class="profile-name yellow">Frank Gomez</h1>
+      <div class="profile-content">
+        <!-- Profile picture at the top center -->
+        <div class="profile-image-container">
+          <img src="/assets/imgs/me.jpeg" alt="Frank Gomez" class="profile-round">
+        </div>
+        
+        <!-- Name follows the profile picture -->
+        <h1 class="profile-name yellow">Frank Brano Gomez</h1>
+        
+        <!-- Social media links after the name -->
+        <div class="profile-social">
+          <a href="https://www.linkedin.com/in/frank-brano-gomez/" target="_blank" aria-label="LinkedIn">
+            <span class="icon">linkedin</span>
+          </a>
+          <a href="mailto:frankbr985gomes@gmail.com" target="_blank" aria-label="Email">
+            <span class="icon">email</span>
+          </a>
+          <a href="https://x.com/iamu985" target="_blank" aria-label="Twitter">
+            <span class="icon">twitter</span>
+          </a>
+          <a href="https://github.com/iamu985" target="_blank" aria-label="GitHub">
+            <span class="icon">github</span>
+          </a>
+        </div>
+        
+        <!-- Designations come last -->
         <div class="profile-titles">
           <p class="profile-title">Software Engineer</p>
-          <p class="profile-title">AI Automation Architect</p>
-          <p class="profile-title">& Integration Specialist</p>
+          <p class="profile-title">AI Automation Architect & Integration Specialist</p>
         </div>
-      </div>
-  
-      <div class="profile-social">
-        <a href="[YOUR_LINKEDIN_URL]" aria-label="LinkedIn">
-          <svg class="social-icon">...</svg>
-        </a>
-        <a href="mailto:your@email.com" aria-label="Email">
-          <svg class="social-icon">...</svg>
-        </a>
-        <a href="[YOUR_TWITTER_URL]" aria-label="Twitter">
-          <svg class="social-icon">...</svg>
-        </a>
-        <a href="[YOUR_GITHUB_URL]" aria-labelGitHub">
-          <svg class="social-icon">...</svg>
-        </a>
       </div>
     </div>
   </header>
@@ -35,55 +37,113 @@
   <style>
   .site-header {
     background: #1a1a1a;
-    padding: 1rem 2rem;
+    padding: 2rem 1rem;
     border-bottom: 2px solid #333;
   }
   
   .profile-header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
   }
   
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .profile-image-container {
+    margin-bottom: 1.5rem;
+  }
+  
   .profile-round {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #ffd700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
   
-  .profile-center {
-    text-align: center;
-  }
-  
-  .profile-titles {
-    margin-top: 0.5rem;
-  }
-  
-  .profile-title {
-    margin: 0.2rem 0;
-    font-size: 1.1rem;
-    color: #fff;
+  .profile-name {
+    margin: 0 0 1rem 0;
+    font-size: 2.2rem;
+    color: #ffd700;
   }
   
   .profile-social {
     display: flex;
     gap: 1.5rem;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
   }
   
-  .social-icon {
-    width: 28px;
-    height: 28px;
-    fill: #ffd700;
-    transition: fill 0.3s ease;
+  .icon {
+    font-size: 1.2rem;
+    color: #ffd700;
+    transition: color 0.3s ease;
   }
   
-  .social-icon:hover {
-    fill: #fff;
+  .icon:hover {
+    color: #fff;
+  }
+  
+  .profile-titles {
+    width: 100%;
+  }
+  
+  .profile-title {
+    margin: 0.3rem 0;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .yellow {
+    color: #ffd700;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .profile-round {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .profile-name {
+      font-size: 1.8rem;
+    }
+    
+    .profile-title {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .site-header {
+      padding: 1.5rem 0.75rem;
+    }
+    
+    .profile-round {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .profile-name {
+      font-size: 1.5rem;
+    }
+    
+    .profile-social {
+      gap: 1rem;
+    }
+    
+    .icon {
+      font-size: 1rem;
+    }
   }
   </style>
