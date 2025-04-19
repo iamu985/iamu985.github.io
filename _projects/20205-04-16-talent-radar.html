@@ -16,7 +16,7 @@ is_published: true
     <p><strong>Version:</strong> 1.0<br>
     <strong>Date:</strong> April 2025</p>
     
-    <h2>1. Introduction</h2>
+    <h2 class="sub-head">1. Introduction</h2>
     <h3>1.1 Purpose</h3>
     <p>Hiring is repetitive. Talent Radar handles the monotony. It reads resumes, learns from job descriptions, matches intent, and prepares interviews. It works quietly and efficiently—designed to shrink time and surface relevance.</p>
     
@@ -53,7 +53,7 @@ is_published: true
       </tbody>
     </table>
     
-    <h2>2. Shape of the System</h2>
+    <h2 class="sub-head">2. Shape of the System</h2>
     <h3>2.1 Overview</h3>
     <pre>
     Resume Drop → FastAPI → Pinecone/Milvus (Vectors)
@@ -71,7 +71,7 @@ is_published: true
       <li><strong>Admin Interface:</strong> Visual CRUD, sends data to external systems.</li>
     </ul>
     
-    <h2>3. Functionality</h2>
+    <h2 class="sub-head">3. Functionality</h2>
     <h3>3.1 Resume Processing</h3>
     <table>
       <thead>
@@ -107,7 +107,7 @@ is_published: true
       </tbody>
     </table>
     
-    <h2>4. Constraints</h2>
+    <h2 class="sub-head">4. Constraints</h2>
     <table>
       <thead>
         <tr><th>Category</th><th>Requirement</th><th>Implementation</th></tr>
@@ -120,7 +120,7 @@ is_published: true
       </tbody>
     </table>
     
-    <h2>5. Endpoints</h2>
+    <h2 class="sub-head">5. Endpoints</h2>
     <pre>
     POST /api/v1/pipeline/resume-store
     POST /api/v1/pipeline/resume-analyzer
@@ -132,7 +132,7 @@ is_published: true
     GET /api/job-roles/&lt;id&gt;/analyze
     </pre>
     
-    <h2>6. Data Shapes</h2>
+    <h2 class="sub-head">6. Data Shapes</h2>
     <h3>SQL Models</h3>
     <pre>
     Candidate:
@@ -157,7 +157,7 @@ is_published: true
     }
     </pre>
     
-    <h2>7. Failure Plans</h2>
+    <h2 class="sub-head">7. Failure Plans</h2>
     <table>
       <thead>
         <tr><th>Failure</th><th>Resolution</th></tr>
@@ -169,7 +169,7 @@ is_published: true
       </tbody>
     </table>
     
-    <h2>8. Deployment</h2>
+    <h2 class="sub-head">8. Deployment</h2>
     <pre>
     docker-compose.yml:
       fastapi
@@ -178,7 +178,7 @@ is_published: true
     </pre>
     <p><strong>CI/CD:</strong> GitHub Actions → AWS ECS</p>
     
-    <h2>9. Observability</h2>
+    <h2 class="sub-head">9. Observability</h2>
     <ul>
       <li><strong>Latency:</strong> P99 &lt; 5s</li>
       <li><strong>Accuracy:</strong> A/B test vs HR manual</li>
@@ -208,5 +208,8 @@ is_published: true
       }
       th {
         background-color: #333;
+      }
+      .sub-head {
+        color: #f9b555
       }
 </style>

@@ -2,17 +2,44 @@
 title: Forevision Digital
 client: Hometown Pizzeria
 stack: [Python, Django, Postgresql]
-demo_url: https://example.com
-source_url: https://github.com
+demo_url: https://forevisiondigital.com/
 featured_image: /assets/imgs/projects/forevisiondigital/forevisiondigital.png
 description: WordPress website for music distribution company.
 tag: [client, django, python]
 class: projects
 is_live: true
-is_published: false
+is_published: true
 ---
 
 {% if page.is_published == false %}
     <p class="notice">Details of this project will come really soon!</p>
     <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
+{% else %}
+<div>
+    <h2 style="color:#f9b555; margin-top:0;">ForeVision Digital</h2>
+    <p>WordPress‑powered platform for digital music distribution and caller‑tune services—built for speed, privacy, and artist control.</p>
+    <h3 style="color:#f9b555;">Plans & Pricing</h3>
+    <ul>
+      <li><strong>Pro:</strong> ₹498/song — Global stores, Content ID, 90% royalties.</li>
+      <li><strong>CRBT+:</strong> ₹699/song — Pro + Jio/Airtel/BSNL caller tunes.</li>
+      <li><strong>CRBT:</strong> ₹499/song — Distribution + caller tunes.</li>
+      <li><strong>Social:</strong> ₹299/song — TikTok, YT Shorts, 85–90% royalties.</li>
+    </ul>
+    <h3 style="color:#f9b555;">Workflow</h3>
+    <ol>
+      <li>Sign up / Log in</li>
+      <li>Select plan & Click “Upload Now”</li>
+      <li>Fill metadata & artwork</li>
+      <li>Choose platforms / subdomain</li>
+      <li>Pay, receive confirmation, live in 3–4 days</li>
+    </ol>
+    <h3 style="color:#f9b555;">Tech & Constraints</h3>
+    <ul>
+      <li>WordPress core, custom theme</li>
+      <li>Static‑first HTML/CSS, minimal JS</li>
+      <li>No analytics or trackers</li>
+      <li>Responsive, mobile‑first design</li>
+    </ul>
+  </div>
+  
 {% endif %}

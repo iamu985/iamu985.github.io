@@ -1,20 +1,70 @@
 ---
 title: All Gangtok hotel site
 client: Hometown Pizzeria
-stack: [Python, Django, Postgresql]
-demo_url: https://example.com
-source_url: https://github.com
+stack: [wordpress]
+demo_url: https://bungkhim-homestay.allgangtokhotels.com/en/
 featured_image: /assets/imgs/projects/allgangtokhotels/allgangtokhotels.png
-description: Project description
-tag: [client, django, python]  # Changed from 'tag' to 'tags'
+description: A homestay listing webapplication to search homestays in Gangtok.
+tag: [client, webapplication, wordpress]  # Changed from 'tag' to 'tags'
 class: projects
 is_live: true
-is_published: false  # Changed variable name for consistency
+is_published: true  # Changed variable name for consistency
 ---
 
 {% if page.is_published == false %}
     <p class="notice">Details of this project will come really soon!</p>
     <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
+{% else %}
+<div class="project-allgangtok">
+    <h2 style="color: #f9b555; margin-top: 0;">AllGangtokHotels.com</h2>
+    
+    <p>
+      A simple, static-driven directory of 634 hotels, 36 homestays, and 29 apartments in Gangtok—built to help travelers find stays without distractions.
+    </p>
+  
+    <h3 style="color: #f9b555;">Interface & Navigation</h3>
+    <ul>
+      <li>Language selector with flags; currency switcher supporting 25+ currencies.</li>
+      <li>Check‑in/check‑out date picker; guest count controls.</li>
+      <li>“Where to stay” summary with counts and “Show map” toggle.</li>
+      <li>Filters: star rating, accommodation type, themes, proximity, sights.</li>
+    </ul>
+    
+    <h3 style="color: #f9b555;">Listings</h3>
+    <p>
+      Each entry displays an image gallery, location snippet, “Read more” summary, price per night, “RESERVE” CTA, and rating badge.{index=5}
+    </p>
+    <p>
+      Pagination and “Top 5★”, “Top 4★” sections guide discovery.
+    </p>
+    <p>
+      Subdomain structure for individual hotel pages—each site lives at `<hotel-name>.allgangtokhotels.com`.
+    </p>
+  
+    <h3 style="color: #f9b555;">Extras & Footnotes</h3>
+    <ul>
+      <li>“Recommended hotels” carousel with exceptional scoring.</li>
+      <li>Footer: newsletter signup, “For travellers” and “Company” nav, legal links, payment logos.</li>
+      <li>No trackers; no analytics—privacy by default.</li>
+    </ul>
+  
+    <h3 style="color: #f9b555;">Stack & Constraints</h3>
+    <ul>
+      <li>Static-first HTML/CSS with progressive enhancement.</li>
+      <li>Responsive design—mobile to desktop.</li>
+      <li>Hand‑crafted templates; no CMS overhead.</li>
+      <li>Minimal JavaScript for filters and date controls.</li>
+    </ul>
+  
+    <h3 style="color: #f9b555;">Notes</h3>
+    <ul>
+      <li>Simplicity beats bloated platforms.</li>
+      <li>Local‑first UX—maps and filters should load fast, offline‑friendly where possible.</li>
+      <li>Every feature stripped to its essence: select, filter, reserve.</li>
+    </ul>
+  </div>
 {% endif %}
 
 
+
+  

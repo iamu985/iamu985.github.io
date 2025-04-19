@@ -1,0 +1,79 @@
+<!-- brands.html -->
+<section class="brands">
+    <h1 class="yellow cursive">Brands I've Collaborated With</h1>
+    <div class="brands-grid">
+        {% for brand in site.data.brands %}
+        <div class="brand-item">
+            <div class="brand-logo">
+                <img src="{{ brand.logo | relative_url }}" alt="{{ brand.name }} logo">
+            </div>
+            <div class="brand-meta">
+                <h3 class="cursive">{{ brand.name }}</h3>
+                <div class="tags">
+                    {% for tag in brand.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<style>
+    /* ===== BRANDS SECTION ===== */
+    .brands {
+        margin: 4rem 0;
+        padding: 2rem 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .brand-item {
+        background-color: var(--glass-bg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--border);
+    }
+
+    .brand-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .brand-logo {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .brand-logo img {
+        max-height: 80px;
+        max-width: 200px;
+        width: auto;
+        margin: 0 auto;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+    }
+
+    .brand-item:hover .brand-logo img {
+        filter: grayscale(0%);
+    }
+
+    .brand-meta {
+        text-align: center;
+    }
+
+    .brand-meta h3 {
+        margin: 0.5rem 0;
+        color: var(--accent);
+    }
+</style>

@@ -1,0 +1,19 @@
+- name: "Hometown Pizzeria"
+  logo: "/assets/imgs/logos/hometown.jpg"
+  tags:
+    - "Dusk"
+    - "Order Management"
+    - "Inventory Management"
+
+- name: "ForevisionDigital"
+  logo: "/assets/imgs/logos/forevision.png"
+  tags:
+    - "DDEX Testing and Integration"
+    - "Wordpress site"
+
+- name: "Appseconnect"
+  logo: "/assets/imgs/logos/aec.png"
+  tags:
+    - "ERP Integration"
+    - "Data Migration"
+    - "Custom Modules"

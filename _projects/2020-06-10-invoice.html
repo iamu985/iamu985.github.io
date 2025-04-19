@@ -1,0 +1,72 @@
+---
+title: Invoice
+stack: [Python]
+source_url: https://github.com/iamu985/Invoice
+featured_image: /assets/imgs/projects/invoice/1.png
+description: Project description
+tag: [python, personal, utility]
+class: projects
+is_live: true
+is_published: true
+---
+
+<div class="invoice-app-description">
+    <h2>Invoice Generator for Freelance Writers</h2>
+    <img src="/assets/imgs/projects/invoice/1.png" alt="" srcset="">
+    <p>
+      In the world of freelancing—especially among writers paid per word—creating invoices is a tedious but necessary task. Writers must manually track word counts, associate them with specific articles, and format this data for clients. This application simplifies that process.
+    </p>
+  
+    <p>
+      With <strong>Invoice</strong>, generating invoices becomes a one-click operation.
+    </p>
+  
+    <h3>Usage</h3>
+    <p>
+      Place all your articles in a single folder. Run <code>app.py</code>. A window will appear, prompting you to:
+    </p>
+    <ul>
+      <li>Enter the path to the directory containing your articles.</li>
+      <li>Set the destination folder for the generated invoice.</li>
+      <li>Provide a name for the Excel invoice file.</li>
+      <li>Optional flags: <code>title</code> and <code>dummy</code> (both default to <code>false</code>).</li>
+    </ul>
+    
+    <h4><code>title</code> (bool, default: <code>false</code>)</h4>
+    <p>
+      Microsoft Word files can store internal titles. If this flag is <code>true</code>, the app attempts to extract this metadata and include it in the invoice.
+    </p>
+  
+    <h4><code>dummy</code> (bool, default: <code>false</code>)</h4>
+    <p>
+      Freelancers are often assigned target word counts—200, 500, 1000, or more. Actual counts vary. This flag enables the app to <em>predict</em> the intended word count based on the actual total. The predicted count is shown under "Dummy Word Count."
+    </p>
+  
+    <h3>Output</h3>
+    <p>
+      The application generates an Excel file with the following columns:
+    </p>
+    <ol>
+      <li>File Name (.docx)</li>
+      <li>Title (optional)</li>
+      <li>Created Date</li>
+      <li>Last Modified Date</li>
+      <li>Actual Word Count</li>
+      <li>Predicted Word Count (Dummy)</li>
+    </ol>
+  
+    <p>
+      This tool reduces friction in billing workflows, giving writers more time to focus on what matters—writing.
+    </p>
+  </div>
+  
+  <style>
+    pre, code {
+        background-color: #080602;
+        color: #f9b555;
+        padding: 0.5rem;
+        border-radius: 5px;
+        display: block;
+        white-space: pre-wrap;
+      }
+    </style>
