@@ -52,7 +52,7 @@ layout: default
     </div>
   </div>
   
-  <div class="project-content">
+  <div class={% if page.is_published == true %}"project-content" {% else %}"notice-container"{% endif %}>
     {{ content }}
   </div>
 </div>

@@ -7,7 +7,11 @@ featured_image: /assets/imgs/projects/zshaliasmanager/zshaliasmanager.png
 description: Linux utility tool for simplified alias management in zsh shell.
 tag: ["utility", "console", "linux"]
 class: projects
-is_live: false
+is_live: true
+is_published: false
 ---
 
-# Zsh-Alias-Manager
+{% if page.is_published == false %}
+    <p class="notice">Details of this project will come really soon!</p>
+    <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
+{% endif %}

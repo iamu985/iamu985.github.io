@@ -8,7 +8,11 @@ featured_image: /assets/imgs/projects/forevisiondigital/forevisiondigital.png
 description: WordPress website for music distribution company.
 tag: [client, django, python]
 class: projects
-is_live: false
+is_live: true
+is_published: false
 ---
 
-# Forevision Digital
+{% if page.is_published == false %}
+    <p class="notice">Details of this project will come really soon!</p>
+    <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
+{% endif %}

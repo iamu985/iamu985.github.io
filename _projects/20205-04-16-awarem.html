@@ -8,7 +8,12 @@ featured_image: /assets/imgs/projects/talent_radar/talent-radar.png
 description: Project description
 tag: [client, django, python]
 class: projects
-is_live: false
+is_live: true
+is_published: false
 ---
 
-# Awarem - A opensource minimalist order management application powered by Django
+
+{% if page.is_published == false %}
+    <p class="notice">Details of this project will come really soon!</p>
+    <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
+{% endif %}

@@ -8,7 +8,11 @@ featured_image: /assets/imgs/projects/coffee/query-builder.png
 description: Membership management desktop application with advanced search query builder capabilities.
 tag: [client, software]
 class: projects
-is_live: false
+is_live: true
+is_published: false
 ---
 
-# Coffee
+{% if page.is_published == false %}
+    <p class="notice">Details of this project will come really soon!</p>
+    <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
+{% endif %}

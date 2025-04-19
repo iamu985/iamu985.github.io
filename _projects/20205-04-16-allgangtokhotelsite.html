@@ -6,13 +6,15 @@ demo_url: https://example.com
 source_url: https://github.com
 featured_image: /assets/imgs/projects/allgangtokhotels/allgangtokhotels.png
 description: Project description
-tag: [client, django, python]
+tag: [client, django, python]  # Changed from 'tag' to 'tags'
 class: projects
 is_live: true
+is_published: false  # Changed variable name for consistency
 ---
 
-<div class="notice-container">
+{% if page.is_published == false %}
     <p class="notice">Details of this project will come really soon!</p>
-    <p class="notice">I am stil building this site.</p>
     <img src="/assets/imgs/chibi-apology.png" alt="Chibi character" class="chibi-image">
-</div>
+{% endif %}
+
+

@@ -1,0 +1,212 @@
+---
+title: Talent Radar
+stack: [Python, Langchain, LLM, FastAPI]
+source_url: https://github.com/iamu985/talent-radar
+featured_image: /assets/imgs/projects/talent_radar/talent-radar.png
+description: AI recruitment automation tool that helps businesses find the best candidates in minutes, not weeks.
+tag: [ai, automation, personal]
+class: projects
+is_live: true
+is_published: true
+---
+
+
+<div>
+    <p><em>A self-reliant tool for navigating modern recruitment.</em></p>
+    <p><strong>Version:</strong> 1.0<br>
+    <strong>Date:</strong> April 2025</p>
+    
+    <h2>1. Introduction</h2>
+    <h3>1.1 Purpose</h3>
+    <p>Hiring is repetitive. Talent Radar handles the monotony. It reads resumes, learns from job descriptions, matches intent, and prepares interviews. It works quietly and efficiently—designed to shrink time and surface relevance.</p>
+    
+    <h3>1.2 Scope</h3>
+    <p><strong>Included:</strong></p>
+    <ul>
+      <li>Parsing resumes, extracting signal from noise.</li>
+      <li>Matching human potential to job descriptions using vector mathematics.</li>
+      <li>Generating questions for interviews.</li>
+      <li>Updating real-time status using Redis.</li>
+      <li>Connecting with ecosystems like Odoo, WhatsApp, and email.</li>
+    </ul><br>
+    <p><strong>Not Included:</strong></p>
+    <ul>
+      <li>Payroll.</li>
+      <li>Onboarding.</li>
+      <li>Multi-user dashboards.</li>
+    </ul>
+    
+    <img src="/assets/imgs/projects/talent_radar/talent-radar.png" alt="" srcset="">
+
+    <h3>1.3 Stack</h3>
+    <table>
+      <thead>
+        <tr><th>Component</th><th>Technology</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Backend</td><td>FastAPI (AI), Django (Admin)</td></tr>
+        <tr><td>Storage</td><td>PostgreSQL</td></tr>
+        <tr><td>Vector Storage</td><td>Pinecone, Milvus DB</td></tr>
+        <tr><td>Queue</td><td>Redis</td></tr>
+        <tr><td>Intelligence</td><td>TogetherAI, Sentence Transformer Embeddings</td></tr>
+        <tr><td>Integrations</td><td>Odoo CRM</td></tr>
+      </tbody>
+    </table>
+    
+    <h2>2. Shape of the System</h2>
+    <h3>2.1 Overview</h3>
+    <pre>
+    Resume Drop → FastAPI → Pinecone/Milvus (Vectors)
+                         ↘ PostgreSQL (Metadata)
+                         ↘ Redis Queue → Django Admin → Odoo / Email
+    </pre>
+
+    <img src="/assets/imgs/projects/talent_radar/graph-dark.svg" alt="" srcset="">
+    
+    <h3>2.2 Breakdown</h3>
+    <ul>
+      <li><strong>Resume Ingestion:</strong> Accepts files, extracts text, generates embeddings.</li>
+      <li><strong>Matching Engine:</strong> Compares job and resume vectors, ranks by closeness.</li>
+      <li><strong>Queue Manager:</strong> Handles retries, tracks state, avoids duplication.</li>
+      <li><strong>Admin Interface:</strong> Visual CRUD, sends data to external systems.</li>
+    </ul>
+    
+    <h2>3. Functionality</h2>
+    <h3>3.1 Resume Processing</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Requirement</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>FR-01</td><td>Parse files</td><td>PyPDF2, docx2txt</td></tr>
+        <tr><td>FR-02</td><td>Store embeddings</td><td>Pinecone + PostgreSQL</td></tr>
+        <tr><td>FR-03</td><td>Batch mode (100+)</td><td>Async queue</td></tr>
+      </tbody>
+    </table>
+    
+    <h3>3.2 Matching</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Requirement</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>FR-04</td><td>JD Embeddings</td><td>Sentence Transformer</td></tr>
+        <tr><td>FR-05</td><td>Rank relevance</td><td>Pincone cosine > 0.85</td></tr>
+        <tr><td>FR-06</td><td>Export top picks</td><td>Odoo PATCH</td></tr>
+      </tbody>
+    </table>
+    
+    <h3>3.3 Interview Prep</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Requirement</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>FR-07</td><td>Generate questions</td><td>Prompted metaai/llama-70b-turbo</td></tr>
+        <tr><td>FR-08</td><td>Deliver via Email</td><td>IMTP</td></tr>
+      </tbody>
+    </table>
+    
+    <h2>4. Constraints</h2>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Requirement</th><th>Implementation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Performance</td><td>50 resumes/min</td><td>FastAPI + Redis</td></tr>
+        <tr><td>Security</td><td>Encrypt PII</td><td>AES-256 + Django Fernet</td></tr>
+        <tr><td>Scaling</td><td>10K resumes/day</td><td>Kubernetes</td></tr>
+        <tr><td>Usability</td><td>Training < 30 min</td><td>Minimal Admin Panel</td></tr>
+      </tbody>
+    </table>
+    
+    <h2>5. Endpoints</h2>
+    <pre>
+    POST /api/v1/pipeline/resume-store
+    POST /api/v1/pipeline/resume-analyzer
+    GET /api/v1/webhook/receiver?task_id=&lt;ID&gt;
+    </pre>
+    
+    <pre>
+    POST /api/candidates/
+    GET /api/job-roles/&lt;id&gt;/analyze
+    </pre>
+    
+    <h2>6. Data Shapes</h2>
+    <h3>SQL Models</h3>
+    <pre>
+    Candidate:
+      resume: file
+      raw_text: text
+      metadata: JSON
+    
+    JobRole:
+      description: text
+      embeddings: binary
+    </pre>
+    
+    <h3>Vector Store (Qdrant)</h3>
+    <pre>
+    {
+      collection: "resumes",
+      vector: [1536 floats],
+      payload: {
+        candidate_id: 43,
+        skills: ["python", "ml"]
+      }
+    }
+    </pre>
+    
+    <h2>7. Failure Plans</h2>
+    <table>
+      <thead>
+        <tr><th>Failure</th><th>Resolution</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Parser crash</td><td>Retry → DLQ</td></tr>
+        <tr><td>Agent limits</td><td>Backoff 10→60s</td></tr>
+        <tr><td>Odoo down</td><td>Cache, then sync</td></tr>
+      </tbody>
+    </table>
+    
+    <h2>8. Deployment</h2>
+    <pre>
+    docker-compose.yml:
+      fastapi
+      django
+      qdrant
+    </pre>
+    <p><strong>CI/CD:</strong> GitHub Actions → AWS ECS</p>
+    
+    <h2>9. Observability</h2>
+    <ul>
+      <li><strong>Latency:</strong> P99 &lt; 5s</li>
+      <li><strong>Accuracy:</strong> A/B test vs HR manual</li>
+      <li><strong>Tools:</strong> Prometheus + Grafana, Sentry</li>
+    </ul>
+    
+    <p><em>Talent Radar observes, learns, and then steps back.</em></p>
+</div>
+
+<style>
+    pre, code {
+        background-color: #080602;
+        color: #f9b555;
+        padding: 0.5rem;
+        border-radius: 5px;
+        display: block;
+        white-space: pre-wrap;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+      th, td {
+        border: 1px solid #444;
+        padding: 0.5rem;
+      }
+      th {
+        background-color: #333;
+      }
+</style>
