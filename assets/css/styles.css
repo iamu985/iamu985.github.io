@@ -37,7 +37,7 @@ html {
 }
 
 body {
-    font-family: "Syne Mono", monospace;
+    font-family: "Fira Code", monospace;
     background-color: var(--nav-bg);
     color: var(--main-text);
     line-height: 1.6;
@@ -62,7 +62,7 @@ h2 {
     font-size: 1.8rem;
     margin-top: 40px;
     margin-bottom: 20px;
-    font-family: "Winky Rough", sans-serif;
+    font-family: "Fira Code", sans-serif;
     font-optical-sizing: auto;
     font-style: italic;
 }
@@ -71,7 +71,7 @@ h3 {
     font-size: 1.3rem;
     margin-top: 15px;
     margin-bottom: 10px;
-    font-family: "Winky Rough", sans-serif;
+    font-family: "Fira Code", sans-serif;
 }
 
 p {
@@ -111,7 +111,7 @@ img {
 }
 
 .cursive {
-    font-family: 'Winky Rough';
+    font-family: 'Fira Code';
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: italic;
@@ -186,7 +186,7 @@ img {
 }
 
 .nav-text {
-    font-family: "Winky Rough", sans-serif;
+    font-family: "Fira Code", sans-serif;
     font-weight: bolder;
     font-size: 1.6rem;
     font-style: italic;
@@ -290,7 +290,7 @@ img {
 }
 
 .designation {
-    font-family: "Syne Mono", monospace;
+    font-family: "Fira Code", monospace;
     color: var(--main-text);
     font-size: 1.1rem;
     line-height: 1.4;
@@ -298,7 +298,7 @@ img {
 }
 
 .tagline {
-    font-family: "Winky Rough", sans-serif;
+    font-family: "Fira Code", sans-serif;
     font-style: italic;
     color: var(--accent);
     font-size: 1.3rem;
@@ -420,7 +420,7 @@ img {
     text-align: center;
     color: var(--accent);
     margin-bottom: 15px;
-    font-family: "Winky Rough", sans-serif;
+    font-family: "Fira Code", sans-serif;
 }
 
 .waka-chart figure {
@@ -464,7 +464,7 @@ img {
 .article h3 {
     padding: 15px;
     margin: 0;
-    font-family: "Winky Rough", sans-serif;
+    font-family: "Fira Code", sans-serif;
     font-style: italic;
     color: var(--accent);
 }
@@ -492,7 +492,7 @@ img {
 .badge {
     display: inline-flex;
     align-items: center;
-    font-family: "Winky Rough", sans-serif;
+    font-family: "Fira Code", sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 1;
