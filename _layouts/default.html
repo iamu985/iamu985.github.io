@@ -1,39 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     {% if jekyll.environment == "production" %}
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZW6YC1PNM"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EZW6YC1PNM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            gtag('config', 'G-EZW6YC1PNM');
-        </script>
-    {% endif %}
-    {%- include head.html -%}
-</head>
+      gtag("config", "G-EZW6YC1PNM");
+    </script>
+    {% endif %} {%- include head.html -%}
+  </head>
 
-<body>
+  <body>
+    <main class="container">{% include navigation.html %} {{ content }}</main>
 
-    {% if page.url == "/" %}
-    {% include aside.html %}
-    {% include navigation.html %}
-    <main class="main-content">
-        {{ content }}
-    </main>
-    {% else %}
-    <main class="container">
-        {% include navigation.html %}
-        {{ content }}
-    </main>
-    {% endif %}
-
-    <footer>
-        {%- include footer.html -%}
-    </footer>
-</body>
-
+    <footer>{%- include footer.html -%}</footer>
+  </body>
 </html>

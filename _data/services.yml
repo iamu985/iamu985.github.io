@@ -1,0 +1,6 @@
+- name: "AI & Automation"
+  description: "GPT-4, LangChain, Pinecone, vector DBs — I use these tools to build practical systems that think just enough to be useful."
+- name: "Code, Interfaces & Websites"
+  description: "Python (FastAPI, Django), JavaScript (React), databases, schedulers, and queues — whatever fits the job. "
+- name: "Integrations"
+  description: "REST, SOAP, OData, you name it. I wire things up so data gets where it needs to be, reliably. A lot of my work is invisible — the kind of backend logic that quietly makes everything click. I enjoy that. I like when systems hum in the background and people barely notice the machinery."

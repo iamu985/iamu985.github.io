@@ -1,0 +1,16 @@
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">./my_services.sh</h2>
+    <div class="projects">
+      {% for service in site.data.services %%}
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">{{service.name}}</h3>
+          <p class="project-description">{{service.description}}</p>
+          <a href="#" class="project-link">View Projects</a>
+        </div>
+      </div>
+      {% endfor %%}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section class="hero">
+  <div class="terminal-container">
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+      </div>
+      <div class="terminal-content">
+        <p><span class="prompt">user@visitor:~$</span> whoami</p>
+        <p>{{ site.data.terminal.whoami }}</p>
+        <p><span class="prompt">user@visitor:~$</span> ls -la skills/</p>
+        <p>total {{ site.data.terminal.skills | size }} items</p>
+        {% for skill in site.data.terminal.skills %}
+        <p>drwxr-xr-x {{ skill }}</p>
+        {% endfor %}
+        <p><span class="prompt">user@visitor:~$</span> cat mission.txt</p>
+        <p>{{ site.data.terminal.mission }}</p>
+        <p>
+          <span class="prompt">user@visitor:~$</span>
+          <span class="typing-text"
+            >contact --now -> <a href="#contact">click here</a></span
+          ><span class="cursor"></span>
+        </p>
+      </div>
+    </div>
+    <img src="/assets/imgs/cme-pixel-tr.png" class="pixel-art" />
+  </div>
+</section>

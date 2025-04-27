@@ -3,49 +3,42 @@ layout: default
 title: Home
 ---
 
-<div class="content-wrapper">
-    <div class="content">
-        <div class="services">
-            <h1 class="yellow cursive">What I work with</h1>
-            <h3><u>AI & Automation</u></h3>
-            <p>GPT-4, LangChain, Pinecone, vector DBs — I use these tools to build practical systems that think just
-                enough to be useful.</p>
-            <a href="/projects?filter=ai" class="button">See my projects on AI and Automation</a>
-            <img src="./assets/imgs/hard-at-work.png" alt="Frank Gomez working on a project" class="profile-img" />
-            <h3><u>Code, Interfaces & Websites</u></h3>
-            <p>Python (FastAPI, Django), JavaScript (React), databases, schedulers, and queues — whatever fits the job.
-            </p>
-            <a href="/projects/?filter=code" class="button">See my projects on this</a>
-            <h3><u>Integrations</u></h3>
-            <p>REST, SOAP, OData, you name it. I wire things up so data gets where it needs to be, reliably.</p>
+{% include terminal.html %} {% include services.html %} {% include about.html %}
+{% include brands.html %} {% include waka.html %}
 
-            <p>A lot of my work is invisible — the kind of backend logic that quietly makes everything click. I enjoy
-                that. I like when systems hum in the background and people barely notice the machinery.</p>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+         const themeToggle = document.getElementById("themeToggle");
+         const body = document.body;
 
-            <a href="/projects/?filter=integrations" class="button">See my projects on Integrations</a>
-        </div>
-        <div class="notice-container">
-            <p class="notice">I'm not interested in overengineering. I'm interested in tools that solve actual problems.
-                If that's your vibe too, we'll probably get along.</p>
-            <img src="/assets/imgs/lets-connect.png" alt="Chibi character" class="chibi-image">
-        </div>
-        <a href="/contact-me/" class="button">Get in touch</a>
-        <div class="meet-me">
-            <h1 class="yellow cursive">Hello World!</h1>
-            <img src="./assets/imgs/cartoon-me.png" alt="Frank Gomez working on a project" class="profile-img" />
-            <p>Nice to meet you, I'm <span class="yellow"><b><i><u>Frank</u></i></b></span> — I build systems that make
-                work smoother, faster, and a little less frustrating.</p>
+         const savedTheme = localStorage.getItem("portfolioTheme");
+         if (savedTheme === "creative") {
+             body.classList.add("creative-mode");
+             themeToggle.checked = true;
+         }
 
-            <p>By title, I'm a Software Engineer, an AI Automation Architect, and Integration Specialist. In practice,
-                I'm someone who's spent the last few years knee-deep in real-world problems — connecting broken systems,
-                stripping out manual overhead, and helping companies actually use the tech they pay for.</p>
+         themeToggle.addEventListener("change", function () {
+             body.classList.toggle("creative-mode");
+             localStorage.setItem(
+                 "portfolioTheme",
+                 this.checked ? "creative" : "default",
+             );
+         });
 
-            <p>I've worked with startups figuring things out, and with enterprises running full tilt. My projects
-                usually land somewhere between automation, data flow, and custom apps — whether it's syncing thousands
-                of Shopify orders with SAP S/4HANA, or building resume-screening tools that let recruiters focus on
-                people, not parsing PDFs.</p>
-        </div>
-        {% include brands.html %}
-    </div>
-</div>
-{% include waka.html %}
+  Typewriter effect for terminal
+       const typingText = document.querySelector(".typing-text");
+       if (typingText) {
+         const text = typingText.textContent;
+         typingText.textContent = "";
+         let i = 0;
+         const typing = setInterval(() => {
+           if (i < text.length) {
+             typingText.textContent += text.charAt(i);
+             i++;
+           } else {
+             clearInterval(typing);
+           }
+         }, 100);
+       }
+     });
+</script>

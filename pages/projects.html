@@ -3,45 +3,28 @@ layout: default
 title: Projects
 permalink: /projects/
 ---
-<a href="/" class="back-link">← Back to Home</a>
 
-{% if page.url contains '?' %}
-  {% assign current_filter = page.url | split: '=' | last %}
-{% endif %}
-
-{% if current_filter == 'ai' %}
-  <h2>AI & Automation Projects</h2>
-  {% assign filtered_projects = site.projects | where_exp: "item", "item.tags contains 'ai' or item.tags contains 'automation'" %}
-{% elsif current_filter == 'code' %}
-  <h2>Code, Interfaces & Websites Projects</h2>
-  {% assign filtered_projects = site.projects | where_exp: "item", "item.tags contains 'website' or item.tags contains 'interface' or item.tags contains 'code'" %}
-{% elsif current_filter == 'integration' %}
-  <h2>Integration Projects</h2>
-  {% assign filtered_projects = site.projects | where_exp: "item", "item.tags contains 'integration'" %}
-{% else %}
-  <h2>All Projects</h2>
-  {% assign filtered_projects = site.projects %}
-{% endif %}
-
-
-<h2>{{current_filter}}</h2>
-<div class="grid">
-
-  {% for project in filtered_projects %}
-    {% if project.is_live == true %}
-      <a href="{{ project.url | relative_url }}" class="link-card">
-        <div class="article">
-          <div class="featured" style="background-image: url('{{ project.featured_image | relative_url }}');"></div>
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <p><i>Published: {{ project.date | date: "%Y.%m.%d" }}</i></p>
-          <p>
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">./projects.sh</h2>
+    <div class="projects">
+      {% for project in site.projects %}
+      <div class="project-card">
+        <img class="project-img" alt="" src="{{project.featured_image}}" />
+        <div class="project-content">
+          <h3 class="project-title">{{project.title}}</h3>
+          <p class="project-description">{{project.description}}</p>
+          <div class="project-tags">
             {% for tag in project.tags %}
-            <span class="badge">{{ tag }}</span>
-            {% endfor %}
-          </p>
+            <span class="tag">{{tag}}</span>
+            {% endfor %%}
+          </div>
+          <a href="{{  project.url | relative_url }}" class="project-link"
+            >View Projects</a
+          >
         </div>
-      </a>      
-    {% endif %}  
-  {% endfor %}
-</div>
+      </div>
+      {% endfor %%}
+    </div>
+  </div>
+</section>
